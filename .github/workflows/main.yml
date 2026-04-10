@@ -25,5 +25,5 @@ jobs:
 
       - name: Ejecutar mi script
         run: |
-          source("mi_script.R")
+          source("Trabajo.Rproj")
         shell: Rscript {0}
