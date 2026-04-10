@@ -1,4 +1,4 @@
-name: Renderizar Parcial Quarto
+name: Renderizar y Desplegar Parcial
 
 on:
   push:
@@ -7,6 +7,8 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -19,7 +21,7 @@ jobs:
       - name: Instalar Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Instalar librerías de Estadística
+      - name: Instalar librerías
         run: |
           install.packages(c("tidyverse", "kableExtra", "agricolae", "RColorBrewer", "ggplot2", "knitr", "rmarkdown"))
         shell: Rscript {0}
@@ -29,3 +31,10 @@ jobs:
         with:
           to: html
           path: "jfzam.qmd"
+
+      - name: Desplegar en GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
