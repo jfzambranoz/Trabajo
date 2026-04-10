@@ -11,19 +11,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Instalar R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
       - name: Instalar Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Instalar R
-        uses: r-lib/actions/setup-r@v2
-
-      - name: Instalar dependencias de R
+      - name: Instalar librerías de Estadística
         run: |
-          install.packages(c("tidyverse", "rmarkdown", "knitr"))
+          install.packages(c("tidyverse", "kableExtra", "agricolae", "RColorBrewer", "ggplot2", "knitr", "rmarkdown"))
         shell: Rscript {0}
 
       - name: Renderizar Documento
         uses: quarto-dev/quarto-actions/render@v2
         with:
           to: html
-          path: "jfzam.qmd" 
+          path: "jfzam.qmd"
