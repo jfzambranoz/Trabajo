@@ -16,7 +16,7 @@ format:
     toc: true
     toc-location: right
     number-sections: true
-    code-fold: true
+    code-fold: show
     code-summary: "Ver código"
     theme: dark
     highlight-style: monokai
@@ -36,6 +36,7 @@ knitr:
     fig.width: 6
     fig.height: 6
     out.width: "70%"
+
 ---
 
 ```{r setup}
