@@ -726,7 +726,7 @@ cat("--- ESTADÍSTICOS: VARIABLE CONTINUA (TRIANGULAR) ---", "\n",
 knitr::include_graphics("ej 8.png")
 ```
 
-En este ejercicio, la función de densidad $f(x)$ tiene un valor constante de $1/3$ en dos intervalos separados.
+En este ejercicio,  la función de densidad $f(x)$ tiene un valor constante de $1/3$ en dos intervalos separados.
 
 **Fórmulas Aplicadas:** 1. **Condición de Densidad:** Para que sea válida, $\int_{-\infty}^{\infty} f(x) \, dx = 1$. $$\int_{0}^{1} \frac{1}{3} \, dx + \int_{2}^{4} \frac{1}{3} \, dx = \left[ \frac{x}{3} \right]_0^1 + \left[ \frac{x}{3} \right]_2^4 = \frac{1}{3} + \frac{2}{3} = 1$$ 2. **Probabilidad en un intervalo:** $P(a < X < b) = \int_{a}^{b} f(x) \, dx$. \* Si el intervalo pedido cae en una zona donde $f(x)=0$, esa parte de la integral vale cero.
 
